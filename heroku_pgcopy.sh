@@ -10,7 +10,6 @@ NEW_DATABASE_PLAN="mini"
 OLD_DATABASE_NAME=""
 
 # Step 1: Provision a new database
-
 NEW_DATABASE_NAME="$(heroku addons:create heroku-postgresql:$NEW_DATABASE_PLAN --app $APP_NAME | grep -E 'Created postgresql-[a-z]+-[0-9]+ as HEROKU_POSTGRESQL_[A-Z]+_URL' | awk '{print $2'})"
 
 # Wait for the new database to be ready
