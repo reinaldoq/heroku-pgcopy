@@ -21,9 +21,6 @@ heroku maintenance:on -a $APP_NAME --confirm
 # Step 3: Transfer data to the new database
 heroku pg:copy DATABASE_URL $NEW_DATABASE_NAME --app $APP_NAME --confirm
 
-# Confirm the transfer
-heroku pg:copy DATABASE_URL $NEW_DATABASE_NAME -app $APP_NAME --confirm
-
 # Step 4: Promote the new database
 heroku pg:promote $NEW_DATABASE_NAME --app $APP_NAME
 
